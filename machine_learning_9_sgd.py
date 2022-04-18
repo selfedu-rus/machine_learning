@@ -1,4 +1,4 @@
-﻿import numpy as np
+import numpy as np
 import matplotlib.pyplot as plt
 
 
@@ -40,7 +40,7 @@ print(w)
 print(Q_plot)
 
 line_x = list(range(max(x_train[:, 0])))  # формирование графика разделяющей линии
-line_y = [-x * w[0] / w[1] - w[2] for x in line_x]
+line_y = [-x * w[0] / w[1] - w[2] / w[1] for x in line_x]
 
 x_0 = x_train[y_train == 1]  # формирование точек для 1-го
 x_1 = x_train[y_train == -1]  # и 2-го классов
