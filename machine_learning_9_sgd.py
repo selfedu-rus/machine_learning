@@ -26,7 +26,7 @@ nt = 0.0005  # шаг сходимости SGD
 lm = 0.01  # скорость "забывания" для Q
 N = 500  # число итераций SGD
 
-Q = np.mean([loss(x, w, y) for x, y in zip(x_train, y_train)])  # показатель качества
+Q = np.mean([loss(w, x, y) for x, y in zip(x_train, y_train)])  # показатель качества
 Q_plot = [Q]
 
 for i in range(N):
