@@ -36,7 +36,7 @@ for n in range(T):
     algs[n].fit(train_data, train_labels, sample_weight=w)
 
     predicted = algs[n].predict(train_data) # формируем прогнозы полученного дерева по обучающей выборке
-    N = np.sum(np.abs(train_labels - predicted) / 2) / XN   # вычисляем долю неверных классификаций
+    N = np.sum(np.abs(train_labels - predicted) / 2 * w)   # вычисляем долю неверных классификаций
     alfa.append( 0.5 * np.log((1 - N) / N) if N != 0 else np.log((1-1e-8) / 1e-8) ) # вычисляем вес для текущего алгоритма
 
     # пересчитываем веса объектов выборки
