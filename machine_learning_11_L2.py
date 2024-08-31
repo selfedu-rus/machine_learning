@@ -18,7 +18,7 @@ Y = y_train  # обучающая выборка
 
 # вычисление коэффициентов по формуле w = (XT*X + lambda*I)^-1 * XT * Y
 A = np.linalg.inv(X_train.T @ X_train + IL)
-w = Y @ X_train @ A
+w = A @ X_train.T @ Y
 print(w)
 
 # отображение исходного графика и прогноза
