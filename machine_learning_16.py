@@ -18,8 +18,8 @@ print('Дисперсии:', sw1, sl1, sw_1, sl_1)
 
 x = [10, 40]  # ширина, длина жука
 
-a_1 = lambda x: -np.log(sw_1 * sl_1) - (x[0] - mw_1) ** 2 / (2 * sw_1) - (x[1] - ml_1) ** 2 / (2 * sl_1)
-a1 = lambda x: -np.log(sw1 * sl1) - (x[0] - mw1) ** 2 / (2 * sw1) - (x[1] - ml1) ** 2 / (2 * sl1)
+a_1 = lambda x: -np.log(np.sqrt(sw_1) * np.sqrt(sl_1)) - (x[0] - mw_1) ** 2 / (2 * sw_1) - (x[1] - ml_1) ** 2 / (2 * sl_1)
+a1 = lambda x: -np.log(np.sqrt(sw1) * np.sqrt(sl1)) - (x[0] - mw1) ** 2 / (2 * sw1) - (x[1] - ml1) ** 2 / (2 * sl1)
 y = np.argmax([a_1(x), a1(x)]) * 2 - 1
 
 print('Номер класса (-1 - гусеница, 1 - божья коровка): ', y)
@@ -32,3 +32,4 @@ for x in x_train:
 pr = np.array(pr)
 Q = np.mean(pr != y_train) # доля ошибок
 print(Q)
+
